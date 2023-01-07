@@ -21,15 +21,11 @@ Zumo32U4LineSensors lineSensors;
 Zumo32U4Motors motors;
 Zumo32U4ButtonA buttonA;
 
-
 int16_t lastError = 0;
 
 unsigned int lineSensorValues[NUM_SENSORS]; 
 
 const int16_t minSpeed = useFastTurn ? fastTurnMin : 0;
-
-
-
 
 void calibrateSensors()
 {
@@ -96,7 +92,7 @@ void loop()
   // the "lineSensorValues" argument to readLine() here, even
   // though we are not interested in the individual sensor
   // readings.
-  int16_t position = lineSensors.readLine(lineSensorValues);
+  int16_t position = lineSensors.readLine(lineSensorValues, 1, !senseBlackLine);
 
   // Our "error" is how far we are away from the center of the
   // line, which corresponds to position 2000.

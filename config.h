@@ -21,4 +21,5 @@ namespace robotConstants {
   constexpr float k_d = 8.5;
   constexpr bool useFastTurn = true;
   constexpr int16_t fastTurnMin = -200;
+  constexpr bool senseBlackLine = true;
 }
