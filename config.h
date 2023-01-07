@@ -4,7 +4,7 @@
 
 // Change next line to this if you are using the older Zumo 32U4
 // with a black and green LCD display:
-//#defin OLED
+//#define OLED
 
 // Uncomment if necessary to correct motor directions:
 //#define FLIPMOTORS
@@ -17,9 +17,9 @@ namespace robotConstants {
   // This is the maximum speed the motors will be allowed to turn.
   // A maxSpeed of 400 lets the motors go at top speed.  Decrease
   // this value to impose a speed limit.
-  constexpr uint16_t maxSpeed = 300;
-  constexpr float k_p = 0.3;
-  constexpr float k_d = 7.5;
+  constexpr uint16_t maxSpeed = 400;
+  constexpr float k_p = 0.4;
+  constexpr float k_d = 8.5;
   constexpr bool useFastTurn = true;
   constexpr int16_t fastTurnMin = -200;
 }

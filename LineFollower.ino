@@ -9,6 +9,7 @@ This demo requires a Zumo 32U4 Front Sensor Array to be
 connected, and jumpers on the front sensor array must be
 installed in order to connect pin 4 to DN4 and pin 20 to DN2. */
 
+#include <avr/wdt.h>
 #include <Wire.h>
 #include <Zumo32U4.h>
 #include "config.h"
@@ -132,11 +133,13 @@ void setup()
   buzzer.play("L16 cdegreg4");
   while(buzzer.isPlaying());
   running = true;
+  wdt_enable(WDTO_2S);
 }
 
 void loop()
 {
   if (running){
+    wdt_reset();
     // Get the position of the line.  Note that we *must* provide
     // the "lineSensorValues" argument to readLine() here, even
     // though we are not interested in the individual sensor
