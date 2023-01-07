@@ -1,5 +1,4 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 // This section defines device characteristics
 
 // Change next line to this if you are using the older Zumo 32U4
@@ -23,5 +22,3 @@ namespace robotConstants {
   constexpr bool useFastTurn = true;
   constexpr int16_t fastTurnMin = -200;
 }
-
-#endif
